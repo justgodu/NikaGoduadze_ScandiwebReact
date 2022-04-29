@@ -41,7 +41,6 @@ export default class Cart extends Component {
       for (const item of items) {
         products.push((await getProduct(item.id)).product);
       }
-      console.log("updated");
       this.setState({ products });
     }
   }

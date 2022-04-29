@@ -16,16 +16,13 @@ class CategoryPage extends Component {
   }
 
   async componentDidMount(){
-    const categoryContent = (await getCategoryContent(this.props.params.id)).category;
-    console.log("🚀 ~ file: CategoryPage.js ~ line 22 ~ CategoryPage ~ componentDidMount ~ categoryContent", categoryContent)
-    
+    const categoryContent = (await getCategoryContent(this.props.params.id)).category;    
     this.setState({ title: categoryContent.name, products: categoryContent.products });
   }
 
   async componentDidUpdate(prevProps){
     if(this.props.params.id !== prevProps.params.id){
       const categoryContent = (await getCategoryContent(this.props.params.id)).category;
-      console.log("🚀 ~ file: CategoryPage.js ~ line 22 ~ CategoryPage ~ componentDidMount ~ categoryContent", categoryContent)
       this.setState({ title: categoryContent.name, products: categoryContent.products });
     }
   }

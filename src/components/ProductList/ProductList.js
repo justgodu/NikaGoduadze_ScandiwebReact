@@ -7,7 +7,6 @@ export default class ProductList extends Component {
 
   render() {
     const { currencyIndex, currencySymbol } = this.context;
-    console.log(currencyIndex, currencySymbol);
     return (
       <div className="product-list">
         {this.props.products.map((product, index) => (
