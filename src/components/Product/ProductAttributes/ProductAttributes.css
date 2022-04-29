@@ -1,0 +1,66 @@
+/* text */
+.attributes-container .text-items{
+    display: flex;
+    gap: 12px 12px;
+    flex-wrap: wrap;
+}
+.attributes-container .text-items .text-item{
+    min-width: 45px;
+    padding: 0px 8px;
+    height: 43px;
+    border: 1px solid var(--c-text);
+    text-align: center;
+    line-height: 43px;
+    cursor: pointer;
+    font-family: "SansPro";
+    font-size: 16px;
+}
+
+.attributes-container .disabled .text-items .text-item{
+    cursor:unset;
+}
+
+.attributes-container .disabled .swatch-items .swatch-item{
+    cursor:unset;
+}
+
+.attributes-container .text-items .text-item.active{
+    background-color: var(--c-text);
+    color: white;
+}
+
+.text-filter{
+    margin-top: 42px;
+}
+.attribute-title{
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+/* swatches */
+.attributes-container .swatch-items{
+    display: flex;
+    gap: 12px 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    /* height: 36px; */
+}
+
+.attributes-container .swatch-items .swatch-item{
+    width: 32px;
+    height: 32px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.attributes-container .swatch-items .active{
+    padding: 1px;
+    border: 1px solid var(--c-primary);
+}
+.attributes-container .swatch-items .not-active{
+    padding: 2px;
+}
+
+.swatch-filter{
+    margin-top: 42px;
+}

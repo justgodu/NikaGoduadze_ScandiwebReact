@@ -1,0 +1,12 @@
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 106px 40px;
+}
+
+@media only screen and (max-width: 600px) {
+    .product-list {
+        justify-content: center;
+    }
+}

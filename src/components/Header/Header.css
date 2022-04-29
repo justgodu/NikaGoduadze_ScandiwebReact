@@ -1,0 +1,27 @@
+header{
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    z-index: 9999;
+    top: 0;
+}
+
+header .header-container{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    max-width: 1238px;
+    margin: auto;
+    
+}
+
+header .right-menu{
+    width: 400px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

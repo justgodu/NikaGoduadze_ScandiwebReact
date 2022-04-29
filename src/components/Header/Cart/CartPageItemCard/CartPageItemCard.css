@@ -1,0 +1,109 @@
+.cart-page .cart-item-container {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin: 0;
+  border-bottom: 1px solid #e5e5e5;
+  justify-content: space-between;
+}
+
+.cart-item-container .change-quantity-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cart-item-container .cart-item-info {
+  max-width: 100%;
+}
+
+.cart-item-container .product-image-container {
+  max-width: 200px;
+  text-align: center;
+}
+.cart-item-container .product-image {
+  max-width: 121px;
+  text-align: center;
+}
+.cart-item-container h5 {
+  font-size: 16px;
+  width: 100%;
+  font-weight: normal;
+}
+.cart-item-container .price-title {
+  display: none;
+}
+
+.cart-item-container .price-container {
+  margin-top: 8px;
+}
+
+.cart-page .cart-item-container .qty-container {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  width: 45px;
+  justify-content: space-between;
+  text-align: center;
+  margin-left: 4px;
+  margin-right: 8px;
+}
+
+.cart-page .cart-item-container .change-qty-button {
+  height: 43px;
+  width: 43px;
+  line-height: 43px;
+}
+
+.cart-item-right-side {
+  display: flex;
+}
+
+.cart-page .cart-item-container .product-image img {
+  max-width: 200px;
+}
+
+.cart-page .cart-item-container .product-image {
+  max-width: 200px;
+  position: relative;
+}
+
+.cart-page .cart-item-container .product-image .arrow-container {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  width: 56px;
+  justify-content: space-between;
+}
+
+.cart-page .cart-item-container .product-image .arrow-container div {
+  background-color: rgba(0, 0, 0, 0.73);
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+.cart-page
+  .cart-item-container
+  .product-image
+  .arrow-container
+  .right-arrow
+  img {
+  position: relative;
+  top: 50%;
+  transform: rotate(180deg) translateY(50%);
+}
+
+.cart-page
+  .cart-item-container
+  .product-image
+  .arrow-container
+  .left-arrow
+  img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

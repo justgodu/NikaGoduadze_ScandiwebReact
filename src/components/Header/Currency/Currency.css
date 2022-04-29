@@ -1,0 +1,39 @@
+.currencies-container{
+    padding-right: 22px;
+    position: relative;
+}
+
+.curreny-list-container{
+    display: none;
+}
+
+.currencies-container .active{
+    background-color: white;
+    display: block;
+    position: absolute;
+    left: -15px;
+    width: 114px;
+    text-align: left;
+    box-shadow: 4px 0px 35px #d6d6d6;
+    padding-top: 10px;
+}
+.current-currency{
+    width: 32px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.current-currency .arrow-up{
+    transform: rotate(180deg);
+}
+
+.currencies-container .curreny-list-container .single-currency{
+    cursor: pointer;
+    padding: 10px 0px 10px 20px;
+}
+.currencies-container .curreny-list-container .single-currency:hover{
+    background-color: #EEEEEE;
+}

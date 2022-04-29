@@ -1,0 +1,35 @@
+.single-product-container{
+    display: flex;
+    align-items: flex-start;
+    padding-top: 160px;
+    gap: 100px;
+}
+
+.product-images-container{
+    display: flex;
+    gap: 40px;
+}
+
+.single-product-container .image-list{
+    display: flex;
+    flex-direction: column;
+    gap: 40px 0px;
+}
+.single-product-container .image-list img{
+    width: 80px;
+    cursor: pointer;
+}
+
+.single-product-container .main-image{
+    width: 610px;
+    height: 100%;
+}
+
+.single-product-container .product-title-container{
+    margin-bottom: 43px;
+}
+
+.product-info-container{
+    width: 100%;
+    max-width: 292px;
+}

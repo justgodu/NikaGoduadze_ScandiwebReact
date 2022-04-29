@@ -1,0 +1,42 @@
+.cart-page .page-title{
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #E5E5E5;
+    padding-top: 160px;
+    padding-bottom: 55px;
+}
+
+.cart-sumup-container{
+    margin-top: 32px;
+    margin-bottom: 200px;
+}
+.cart-sumup-container h4{
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 16px;
+}
+
+.cart-sumup-container h4 span{
+    font-weight: bold;
+}
+
+.total-text{
+    padding-top: 6px;
+}
+.cart-page .checkout-button{
+    height: 43px;
+    width: 279px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cart-page .swatch-filter{
+    margin-top: 20px;
+}
+
+.cart-page .text-filter{
+    margin-top: 20px;
+}
