@@ -18,31 +18,33 @@ export default class ProductCard extends Component {
     editItem(tempItem, "add");
   }
   render() {
+    const displayIfOutOfStock = this.props.inStock
+      ? { display: "none" }
+      : { display: "block" };
+
+    const productCardClass = `product-card ${
+      this.props.inStock ? "" : "not-in-stock"
+    }`;
     return (
       <Link to={`/product/${this.props.id}`}>
-        <div
-          className={`product-card ${this.props.inStock ? "" : "not-in-stock"}`}
-        >
+        <div className={productCardClass}>
           <div className="image-container">
             <img
               className="product-image"
               alt={this.props.name}
               src={this.props.image}
             ></img>
-            <div
-              style={
-                this.props.inStock ? { display: "none" } : { display: "block" }
-              }
-              className="out-of-stock-cover"
-            >
+            <div style={displayIfOutOfStock} className="out-of-stock-cover">
               OUT OF STOCK
             </div>
-            <img
-              onClick={this.addToCart.bind(this)}
-              alt="add to cart"
-              className="add-to-cart-button"
-              src="/add-to-cart.svg"
-            ></img>
+            {this.props.inStock && (
+              <img
+                onClick={this.addToCart.bind(this)}
+                alt="add to cart"
+                className="add-to-cart-button"
+                src="/add-to-cart.svg"
+              ></img>
+            )}
           </div>
           <p className="product-title">
             {this.props.brand} {this.props.name}

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import * as ReactDOM from 'react-dom';
 let modalRoot;
 export default class Overflow extends Component {

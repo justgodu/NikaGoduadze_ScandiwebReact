@@ -16,9 +16,8 @@
 }
 
 .cart-item-container .cart-item-info {
-  max-width: 100%;
+  width: 100%;
 }
-
 .cart-item-container .product-image-container {
   max-width: 200px;
   text-align: center;

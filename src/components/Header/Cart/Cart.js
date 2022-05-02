@@ -83,11 +83,14 @@ export default class Cart extends Component {
   render() {
     const { items, editItem, emptyCart } = this.context;
     const count = this.getCartCount(items);
+
+    const displayItemCount = {display: count ? "block" : "none"}
+    const displayOverflow = { display: this.state.open ? "block" : "none" }
     return (
       <div className="cart-icon-container" ref={this.cartRef}>
         <div className="cart-icon" onClick={this.toggleShowCurrencies}>
-          <div style={{display: count ? "block" : "none"}} className="cart-length">{count}</div>
-          <img src="/cart.svg"></img>
+          <div style={displayItemCount} className="cart-length">{count}</div>
+          <img src="/cart.svg" alt="Cart"></img>
         </div>
         <div
           className={
@@ -127,7 +130,7 @@ export default class Cart extends Component {
             </CurrencyContext.Consumer>
           </div>
           <div className="cart-buttons-container">
-            <Link to="/cart">
+            <Link to="/cart" onClick={this.toggleShowCurrencies}>
               <button className="view-bag-button">VIEW BAG</button>
             </Link>
 
@@ -140,7 +143,7 @@ export default class Cart extends Component {
         <Overflow>
           <div
             className="overflow"
-            style={{ display: this.state.open ? "block" : "none" }}
+            style={displayOverflow}
           ></div>
         </Overflow>
       </div>

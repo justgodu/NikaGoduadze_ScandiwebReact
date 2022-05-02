@@ -30,7 +30,7 @@ export default class App extends Component {
       <div className="App">
         <CurrencyProvider>
           <CartProvider>
-            <Header></Header>
+            <Header categories={this.state.categories}></Header>
             <main id="main">
               <Routes>
                 {this.state.categories && this.state.categories.length ? (

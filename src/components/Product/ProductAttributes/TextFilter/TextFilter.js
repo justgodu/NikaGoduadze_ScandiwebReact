@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 
 export default class TextFilter extends Component {
   render() {
+
+    const titleStyle = { fontSize: this.props.fontSize };
     return (
         <div className={"text-filter" + (this.props.disabled ? " disabled" : "")}>
         <h4
           className="attribute-title"
-          style={{ fontSize: this.props.fontSize }}
+          style={titleStyle}
         >
           {this.props.attribute.id}:
         </h4>

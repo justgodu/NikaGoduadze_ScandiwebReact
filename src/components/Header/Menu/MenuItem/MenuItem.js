@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import withHooks from "../../../Wrapper/Wrapper";
 
 class MenuItem extends Component {
@@ -17,7 +17,7 @@ class MenuItem extends Component {
   }
   async componentDidUpdate(prevProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
-      let isActive = this.props.location.pathname == "/"+this.props.title;
+      let isActive = this.props.location.pathname === "/"+this.props.title;
       this.setState({ isActive });
     }
   }

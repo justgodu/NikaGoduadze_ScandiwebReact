@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { useParams } from "react-router-dom";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import getCategoryContent from "../../queries/GetCategoryContent";
 import ProductList from "../../components/ProductList/ProductList";
-import Header from "../../components/Header/Header";
 import withHooks from "../../components/Wrapper/Wrapper";
 
 class CategoryPage extends Component {

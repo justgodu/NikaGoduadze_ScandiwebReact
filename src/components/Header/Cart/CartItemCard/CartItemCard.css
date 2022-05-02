@@ -15,16 +15,16 @@
 }
 
 .cart-item-container .cart-item-info {
-  max-width: 136px;
+  width: 156px;
 }
 
 .cart-item-container .product-image-container {
-  max-width: 121px;
+  max-width: 141px;
   text-align: center;
   vertical-align: middle;
 }
 .cart-item-container .product-image {
-  max-width: 121px;
+  max-width: 141px;
   position: relative;
   top: 50%;
   transform: translateY(-50%);

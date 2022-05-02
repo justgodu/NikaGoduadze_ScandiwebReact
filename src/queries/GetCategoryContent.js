@@ -30,7 +30,7 @@ const getCategoryContent = async (id) => {
               .addField("id")))
     );
 
-  return await client.post(queryResponse);
+  return client.post(queryResponse);
 };
 
 export default getCategoryContent;

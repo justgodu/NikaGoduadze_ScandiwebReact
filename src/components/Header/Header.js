@@ -3,21 +3,16 @@ import React, { Component } from "react";
 import Menu from "./Menu/Menu";
 import Currency from "./Currency/Currency";
 import "./Header.css";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import Cart from "./Cart/Cart";
 
 
 export default class Header extends Component {
-  constructor(props){
-    super(props)
-  }
   render() {
     return (
       <header>
         <div className="header-container">
-        <Menu></Menu>
-        <img src={logo} />
+        <Menu categories={this.props.categories}></Menu>
+        <img src={logo} alt="Logo"/>
 
         <div className="right-menu">
           <Currency></Currency>

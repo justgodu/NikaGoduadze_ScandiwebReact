@@ -1,5 +1,5 @@
+import { Interweave } from "interweave";
 import React, { Component } from "react";
-import { useParams } from "react-router-dom";
 import AddToCartButton from "../../components/Product/AddToCartButton/AddToCartButton";
 import BrandTitle from "../../components/Product/BrandTitle/BrandTitle";
 import ProductAttributes from "../../components/Product/ProductAttributes/ProductAttributes";
@@ -83,6 +83,14 @@ class ProductPage extends Component {
     });
   }
   render() {
+    const displayIfOutOfStock = this.state.product.inStock
+      ? { display: "none" }
+      : { display: "block" };
+    const productImageClass = `main-image ${
+      this.state.product.inStock ? "" : "not-in-stock"
+    }`;
+
+    const descriptionStyle = { fontSize: "16px" };
     return (
       <div className="single-product-container container">
         <div className="product-images-container">
@@ -93,18 +101,25 @@ class ProductPage extends Component {
                     src={src}
                     key={index}
                     onClick={() => this.selectActiveImage(index)}
+                    alt={`${this.state.product.name} ${index}`}
                   ></img>
                 ))
               : ""}
           </div>
-          <img
-            className="main-image"
-            src={
-              this.state.product.gallery
-                ? this.state.product.gallery[this.state.selectedImageIndex]
-                : ""
-            }
-          ></img>
+          <div className="main-image-container">
+            <img
+              className={productImageClass}
+              src={
+                this.state.product.gallery
+                  ? this.state.product.gallery[this.state.selectedImageIndex]
+                  : ""
+              }
+              alt={this.state.product.name}
+            ></img>
+            <div style={displayIfOutOfStock} className="out-of-stock-cover">
+              OUT OF STOCK
+            </div>
+          </div>
         </div>
         <div className="product-info-container">
           <div className="product-title-container">
@@ -124,14 +139,17 @@ class ProductPage extends Component {
             selectedAttributes={this.state.selectedAttributes}
           ></ProductAttributes>
           <ProductPrice prices={this.state.product.prices}></ProductPrice>
-          <AddToCartButton
-            canAddToCart={this.state.canAddToCart}
-            cartObject={this.state.cartObject}
-          ></AddToCartButton>
-          <p
-            style={{ fontSize: "16px" }}
-            dangerouslySetInnerHTML={{ __html: this.state.product.description }}
-          ></p>
+          {this.state.product.inStock && (
+            <AddToCartButton
+              canAddToCart={this.state.canAddToCart}
+              cartObject={this.state.cartObject}
+            ></AddToCartButton>
+          )}
+          <div
+            style={descriptionStyle}
+          >
+            <Interweave content={this.state.product.description}/>
+          </div>
         </div>
       </div>
     );

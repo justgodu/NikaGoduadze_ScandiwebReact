@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import CurrencyContext from "../../../contexts/CurrencyContext";
-import getCurrencies from "../../../queries/GetCurrencies";
 import "./Currency.css";
 export default class Currency extends Component {
   static contextType = CurrencyContext;
@@ -24,6 +23,7 @@ export default class Currency extends Component {
   changeCurrency(index){
     const {setCurrency} = this.context;
     setCurrency(index);
+    this.toggleShowCurrencies();
   }
 
   componentDidMount() {

@@ -29,7 +29,7 @@ export default class CartItemCard extends Component {
         {
           this.props.product && (
             <div className="product-image-container">
-              <img className="product-image" src={this.props.product.gallery[0]}/>
+              <img className="product-image" src={this.props.product.gallery[0]} alt={this.props.product.name}/>
             </div>
           )
         }

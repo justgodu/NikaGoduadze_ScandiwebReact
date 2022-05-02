@@ -6,25 +6,27 @@ export default class CartPageItemCard extends Component {
   constructor(props) {
     super(props);
 
-    this.state={
-      galleryIndex: 0
-    }
+    this.state = {
+      galleryIndex: 0,
+    };
   }
 
-  changeGalleryIndex(action){
-    switch(action){
+  changeGalleryIndex(action) {
+    switch (action) {
       case "add":
-        if(this.state.galleryIndex === this.props.product.gallery.length-1){
-          this.setState({galleryIndex: 0})
-        }else{
-          this.setState({galleryIndex: this.state.galleryIndex + 1})
+        if (this.state.galleryIndex === this.props.product.gallery.length - 1) {
+          this.setState({ galleryIndex: 0 });
+        } else {
+          this.setState({ galleryIndex: this.state.galleryIndex + 1 });
         }
         break;
       case "substract":
-        if(this.state.galleryIndex === 0){
-          this.setState({galleryIndex: this.props.product.gallery.length-1})
-        }else{
-          this.setState({galleryIndex: this.state.galleryIndex - 1})
+        if (this.state.galleryIndex === 0) {
+          this.setState({
+            galleryIndex: this.props.product.gallery.length - 1,
+          });
+        } else {
+          this.setState({ galleryIndex: this.state.galleryIndex - 1 });
         }
         break;
       default:
@@ -69,11 +71,27 @@ export default class CartPageItemCard extends Component {
           {this.props.product && (
             <div className="product-image-container">
               <div className="product-image">
-                <div className="arrow-container">
-                  <div className="left-arrow" onClick={()=>this.changeGalleryIndex("substract")}><img src="/left-arrow.svg"></img></div>
-                  <div className="right-arrow" onClick={()=>this.changeGalleryIndex("add")}><img src="/left-arrow.svg"></img></div></div>
+                {this.props.product.gallery &&
+                  this.props.product.gallery.length > 1 && (
+                    <div className="arrow-container">
+                      <div
+                        className="left-arrow"
+                        onClick={() => this.changeGalleryIndex("substract")}
+                      >
+                        <img src="/left-arrow.svg" alt="left-arrow"></img>
+                      </div>
+                      <div
+                        className="right-arrow"
+                        onClick={() => this.changeGalleryIndex("add")}
+                      >
+                        <img src="/left-arrow.svg" alt="right-arrow"></img>
+                      </div>
+                    </div>
+                  )}
+
                 <img
                   src={this.props.product.gallery[this.state.galleryIndex]}
+                  alt={this.props.product.name}
                 />
               </div>
             </div>

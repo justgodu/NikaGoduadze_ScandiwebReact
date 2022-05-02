@@ -6,7 +6,7 @@ const getCategories = async () => {
 
   const queryResponse = new Query("categories", true).addField("name");
 
-  return await client.post(queryResponse);
+  return client.post(queryResponse);
 };
 
 export default getCategories;

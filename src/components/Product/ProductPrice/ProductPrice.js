@@ -5,9 +5,11 @@ export default class ProductPrice extends Component {
   static contextType = CurrencyContext;
   render() {
     const { currencyIndex, currencySymbol } = this.context;
+
+    const titleStyle = { fontSize: this.props.fontSize };
     return (
       <div className="price-container">
-        <h4 className="price-title" style={{ fontSize: this.props.fontSize }}>
+        <h4 className="price-title" style={titleStyle}>
           Price:
         </h4>
         <h4 className="price-text">
